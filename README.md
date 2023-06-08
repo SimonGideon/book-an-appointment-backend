@@ -1,5 +1,5 @@
 <div align="center">
-  <h1><b>Recipe App</b></h1>
+  <h1><b>House Reservations</b></h1>
   <!-- <img src="./app/assets/images/blog.png" alt="blog img" width="45%" />
   <img src="./app/assets/images/blog_2.png" alt="blog img" width="45%" /> -->
 </div>
@@ -26,9 +26,9 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Recipe App <a name="about-project"></a>
+# 📖 House Reservations <a name="about-project"></a>
 
-> Functional website that will show a list of ingredients, recipes and empower users to interact with them by adding new foods, recipes and downloading shooping lists.
+> Backend with create, read and destyroy actions for a house renting web application with a React client.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -37,7 +37,8 @@
 <details>
   <summary>Client</summary>
     <ul>
-    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
   </ul>
 </details>
 <details>
@@ -63,7 +64,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](https://rails-w71d.onrender.com)
+- [Coming soon]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,7 +88,7 @@ Clone this repository to your desired folder:
 ```sh
 cd my-prefered-folder
   
-git clone https://github.com/jmonto55/recipe-app.git
+git clone https://github.com/jmonto55/book-an-appointment-backend.git
 
 ```
 
@@ -96,7 +97,7 @@ git clone https://github.com/jmonto55/recipe-app.git
 Install this project with:
 
 ```sh
-cd recipe-app
+cd book-an-appointment-backend
   
 bundle
 ```
@@ -108,6 +109,7 @@ Create the databases,run migrations, and populate it with seed data:
 ```sh
 rails db:create
 rails db:migrate
+rails db:seed
 ```
 
 ### Usage
@@ -115,7 +117,6 @@ rails db:migrate
 To run the project run the following commands:
 
 ```sh
-rails tailwindcss:build
 rails s
 ```
 
@@ -132,11 +133,22 @@ rspec
 
 ## 👥 Authors <a name="author"></a>
 
-👤 **Hans-Derly Rameau**
+👤 **Mohamed Abd Elmohsen Saleh**
 
--   GitHub: [@hansderly](https://github.com/hansderly)
--   Twitter: [@\_hansderly](https://twitter.com/_hansderly)
--   LinkedIn: [ansderly-rameau](https://linkedin.com/in/ansderly-rameau/)
+-   GitHub: [@mohamed20163858](https://github.com/mohamed20163858)
+-   Twitter: [@mohamed20163858](https://twitter.com/mohamed20163858)
+-   LinkedIn: [mohamed20163858](https://linkedin.com/in/mohamed20163858/)
+
+👤 **Bryan Hurtado**
+
+-   GitHub: [@DarkxDev](https://github.com/DarkxDev)
+-   LinkedIn: [bryan-hurtado](https://www.linkedin.com/in/bryan-hurtado/)
+
+👤 **Simon Gideon**
+
+-   GitHub: [@SimonGideon](https://github.com/SimonGideon)
+-   Twitter: [@Simon_Gideon](https://twitter.com/Simon_Gideon)
+-   LinkedIn: [simon-gideon](https://www.linkedin.com/in/simon-gideon/)
 
 👤 **Jose Montoya**
 
@@ -168,7 +180,7 @@ If you like this project please give it a star 😁🌟✨
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Thanks to Microverse for providing us with the right material to aid this project development
+Thanks to [Murat Korkmaz](https://www.behance.net/muratk) for the aswesome [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
