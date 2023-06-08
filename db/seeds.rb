@@ -1,5 +1,5 @@
 House.create(name: "Casa Bonita", address: "Malibu av. 34- - 27", description: "Beautiful house with beach view.", city: "Los Angeles", photo: "sdfSDF", night_price: 45)
-House.create(name: "Smart House", address: "Chicago av. 34- - 27", description: "Beautiful house with beach view.", city: "Chicago", photo: "sdfSDF", night_price: 30)
-House.create(name: "Wonder Place", address: "Boston av. 34- - 27", description: "Beautiful house with beach view.", city: "Boston", photo: "sdfSDF", night_price: 25)
+House.create(name: "Smart House", address: "Chicago av. 34- - 27", description: "Cozy apartment in the center of the city.", city: "Chicago", photo: "sdfSDF", night_price: 30)
+House.create(name: "Wonder Place", address: "Boston av. 34- - 27", description: "Big flat in the cultural neighborhood.", city: "Boston", photo: "sdfSDF", night_price: 25)
 House.create(name: "Awesome Crib", address: "Medellin av. 34- - 27", description: "Beautiful house with beach view.", city: "Medellin", photo: "sdfSDF", night_price: 28)
-House.create(name: "Casa Bolivar", address: "Mexico City av. 34- - 27", description: "Beautiful house with beach view.", city: "Mexico City", photo: "sdfSDF", night_price: 35)
+House.create(name: "Casa Bolivar", address: "Mexico City av. 34- - 27", description: "House in the middle of the city.", city: "Mexico City", photo: "sdfSDF", night_price: 35)
