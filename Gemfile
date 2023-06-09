@@ -80,5 +80,3 @@ end
 gem 'rubocop'
 
 gem 'tailwindcss-rails'
-
-gem 'rack-cors'
