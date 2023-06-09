@@ -9,7 +9,9 @@ class ReservationsController < ApplicationController
   end
 
   # GET /reservations/1 or /reservations/1.json
-  def show; end
+  def show
+    render json: @reservation
+  end
 
   # GET /reservations/new
   def new
@@ -41,10 +43,8 @@ class ReservationsController < ApplicationController
   def update
     respond_to do |format|
       if @reservation.update(reservation_params)
-        format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully updated.' }
         format.json { render :show, status: :ok, location: @reservation }
       else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @reservation.errors, status: :unprocessable_entity }
       end
     end
@@ -55,7 +55,6 @@ class ReservationsController < ApplicationController
     @reservation.destroy
 
     respond_to do |format|
-      format.html { redirect_to reservations_url, notice: 'Reservation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
