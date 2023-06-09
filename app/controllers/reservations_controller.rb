@@ -73,29 +73,15 @@ class ReservationsController < ApplicationController
   end
 
   def check_available_dates(reservation)
-    # check if check_in and check_out overlap with already existed reservation
-    if reservation.check_in.nil? || reservation.check_out.nil?
-      reservation.errors.add(:base, 'invalid input data of type date')
-      return false
-    end
-    if reservation.check_in <= Date.today
-      reservation.errors.add(:base, 'Cannot reserve at past date or today')
-      return false
-    end
-    if overlap(reservation.check_in) || overlap(reservation.check_out)
-      reservation.errors.add(:base,
-                             'Not allowed. Your reservation duration overlaps with another already reserved duration.')
-      return false
-    end
+    return false if invalid_date_input(reservation) || internal_overlap(reservation)
+
     interval_end = Reservation.where(house_id: reservation.house_id).where('check_in >= ?',
                                                                            reservation.check_in).minimum(:check_in)
+    return true if interval_end.nil? || reservation.check_out < interval_end
+
     interval_start = Reservation.where(house_id: reservation.house_id).where('check_out <= ?',
                                                                              reservation.check_in).maximum(:check_out)
     if interval_start.nil? && interval_end.nil?
-      true
-    elsif interval_end.nil?
-      true
-    elsif reservation.check_out < interval_end
       true
     else
       reservation.errors.add(:base,
@@ -109,5 +95,26 @@ class ReservationsController < ApplicationController
       return true if r.check_in <= date && r.check_out >= date
     end
     false
+  end
+
+  def internal_overlap(reservation)
+    return false unless overlap(reservation.check_in) || overlap(reservation.check_out)
+
+    reservation.errors.add(:base,
+                           'Not allowed. Your reservation duration overlaps with another already reserved duration.')
+    true
+  end
+
+  def invalid_date_input(reservation)
+    # check if check_in and check_out overlap with already existed reservation
+    if reservation.check_in.nil? || reservation.check_out.nil?
+      reservation.errors.add(:base, 'invalid input data of type date')
+      true
+    elsif reservation.check_in <= Date.today
+      reservation.errors.add(:base, 'Cannot reserve at past date or today')
+      true
+    else
+      false
+    end
   end
 end
