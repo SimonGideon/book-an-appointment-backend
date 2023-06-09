@@ -7,9 +7,8 @@ class Reservation < ApplicationRecord
   validate :check_out_date_must_be_greater
 
   def check_out_date_must_be_greater
-    if check_out.present? && check_in.present? && check_out <= check_in
-      errors.add(:check_out, "date must be greater than check-in date")
-    end
-  end
+    return unless check_out.present? && check_in.present? && check_out <= check_in
 
+    errors.add(:check_out, 'date must be greater than check-in date')
+  end
 end
