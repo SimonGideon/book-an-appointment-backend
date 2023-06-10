@@ -1,0 +1,304 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/houses":
+    post:
+      summary: Creates a house
+      tags:
+      - Houses
+      parameters: []
+      responses:
+        '201':
+          description: house created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                address:
+                  type: string
+                night_price:
+                  type: integer
+                city:
+                  type: string
+                description:
+                  type: string
+                photo:
+                  type: string
+              required:
+              - name
+              - address
+              - night_price
+              - description
+              - photo
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                address:
+                  type: string
+                night_price:
+                  type: integer
+                city:
+                  type: string
+                description:
+                  type: string
+                photo:
+                  type: string
+              required:
+              - name
+              - address
+              - night_price
+              - description
+              - photo
+    get:
+      summary: Retrieves all houses
+      tags:
+      - Houses
+      responses:
+        '200':
+          description: houses found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/house"
+            application/xml:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/house"
+  "/houses/{id}":
+    get:
+      summary: Retrieves a house
+      tags:
+      - Houses
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: house found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  address:
+                    type: string
+                  night_price:
+                    type: integer
+                  city:
+                    type: string
+                  description:
+                    type: string
+                  photo:
+                    type: string
+                required:
+                - id
+                - name
+                - address
+                - night_price
+                - description
+                - photo
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  address:
+                    type: string
+                  night_price:
+                    type: integer
+                  city:
+                    type: string
+                  description:
+                    type: string
+                  photo:
+                    type: string
+                required:
+                - id
+                - name
+                - address
+                - night_price
+                - description
+                - photo
+    delete:
+      summary: Delete house
+      tags:
+      - Houses
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: house deleted
+  "/reservations":
+    get:
+      summary: Retrieves a list of reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Creates a new reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '201':
+          description: Created
+        '422':
+          description: Unprocessable Entity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                check_in:
+                  type: string
+                  format: date
+                check_out:
+                  type: string
+                  format: date
+                user_id:
+                  type: integer
+                house_id:
+                  type: integer
+              required:
+              - check_in
+              - check_out
+              - user_id
+              - house_id
+  "/reservations/{id}":
+    get:
+      summary: Retrieves a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+    put:
+      summary: Updates a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                check_in:
+                  type: string
+                  format: date
+                check_out:
+                  type: string
+                  format: date
+                user_id:
+                  type: integer
+                house_id:
+                  type: integer
+              required:
+              - check_in
+              - check_out
+              - user_id
+              - house_id
+    delete:
+      summary: Deletes a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+    patch:
+      summary: Update a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                check_in:
+                  type: string
+                  format: date
+                check_out:
+                  type: string
+                  format: date
+                user_id:
+                  type: integer
+                house_id:
+                  type: integer
+              required:
+              - check_in
+              - check_out
+              - user_id
+              - house_id
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
