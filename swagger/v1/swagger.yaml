@@ -12,9 +12,9 @@ paths:
       parameters: []
       responses:
         '201':
-          description: house created
+          description: House created successfully
         '422':
-          description: invalid request
+          description: Invalid Request
       requestBody:
         content:
           application/json:
@@ -67,18 +67,62 @@ paths:
       - Houses
       responses:
         '200':
-          description: houses found
+          description: House found
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  "$ref": "#/components/schemas/house"
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    address:
+                      type: string
+                    night_price:
+                      type: integer
+                    city:
+                      type: string
+                    description:
+                      type: string
+                    photo:
+                      type: string
+                  required:
+                  - id
+                  - name
+                  - address
+                  - night_price
+                  - description
+                  - photo
             application/xml:
               schema:
                 type: array
                 items:
-                  "$ref": "#/components/schemas/house"
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    address:
+                      type: string
+                    night_price:
+                      type: integer
+                    city:
+                      type: string
+                    description:
+                      type: string
+                    photo:
+                      type: string
+                  required:
+                  - id
+                  - name
+                  - address
+                  - night_price
+                  - description
+                  - photo
   "/houses/{id}":
     get:
       summary: Retrieves a house
@@ -92,7 +136,7 @@ paths:
           type: string
       responses:
         '200':
-          description: house found
+          description: House found
           content:
             application/json:
               schema:
@@ -144,6 +188,8 @@ paths:
                 - night_price
                 - description
                 - photo
+        '404':
+          description: House not found
     delete:
       summary: Delete house
       tags:
@@ -156,7 +202,9 @@ paths:
           type: string
       responses:
         '204':
-          description: house deleted
+          description: House deleted
+        '404':
+          description: House not found
   "/reservations":
     get:
       summary: Retrieves a list of reservations
@@ -164,7 +212,7 @@ paths:
       - Reservations
       responses:
         '200':
-          description: OK
+          description: Reservation list found
     post:
       summary: Creates a new reservation
       tags:
@@ -172,7 +220,7 @@ paths:
       parameters: []
       responses:
         '201':
-          description: Created
+          description: Reservation Created Successfully
         '422':
           description: Unprocessable Entity
       requestBody:
@@ -209,7 +257,7 @@ paths:
           type: string
       responses:
         '200':
-          description: OK
+          description: Reservation Found
         '404':
           description: Not Found
     put:
@@ -224,9 +272,9 @@ paths:
           type: string
       responses:
         '200':
-          description: OK
+          description: Reservation Updated Successfully
         '404':
-          description: Not Found
+          description: Reservation Not Found
       requestBody:
         content:
           application/json:
@@ -260,9 +308,9 @@ paths:
           type: string
       responses:
         '204':
-          description: No Content
+          description: Deleted
         '404':
-          description: Not Found
+          description: Reservation with ID Not Found
     patch:
       summary: Update a reservation
       tags:
@@ -275,7 +323,7 @@ paths:
           type: string
       responses:
         '200':
-          description: OK
+          description: Reservation Updated Successfully
       requestBody:
         content:
           application/json:
