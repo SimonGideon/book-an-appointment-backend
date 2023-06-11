@@ -5,14 +5,9 @@ Rswag::Api.configure do |c|
   # NOTE: If you're using rswag-specs to generate Swagger, you'll need to ensure
   # that it's configured to generate files in the same folder
   c.swagger_root = Rails.root.to_s + "/swagger"
-
-  # Inject a lambda function to alter the returned Swagger prior to serialization
-  # The function will have access to the rack env for the current request
-  # For example, you could leverage this to dynamically assign the "host" property
-  #
-
-  c.swagger_filter = lambda do |swagger, env|
-    swagger["host"] = "localhost:3000"
+  c.swagger_filter = lambda do |swagger, _|
+    swagger["info"]["description"] = "This is a House booking App that allows users to reserve a room and they will be charged per night" # Add your desired API description here
+    swagger["info"]["title"] = "House Booking API"
     swagger
   end
 end
