@@ -1,5 +1,5 @@
 class House < ApplicationRecord
-  has_many :reservations, dependent: :destroy
+  has_many :reservations, :dependent => :destroy
 
   validates :name, presence: true, length: { minimum: 3, maximum: 16 }
   validates :address, presence: true, length: { minimum: 3 }
