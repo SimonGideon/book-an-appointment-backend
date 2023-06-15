@@ -95,7 +95,19 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-jwt (0.11.0)
+      devise (~> 4.0)
+      warden-jwt_auth (~> 0.8)
     diff-lcs (1.5.0)
+    dry-auto_inject (1.0.1)
+      dry-core (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-configurable (1.0.1)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-core (1.0.0)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
     erubi (1.12.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -104,6 +116,8 @@ GEM
       railties (>= 5.0.0)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -120,6 +134,7 @@ GEM
     json (2.6.3)
     json-schema (3.0.0)
       addressable (>= 2.8)
+    jwt (2.7.1)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -278,6 +293,11 @@ GEM
     unicode-display_width (2.4.2)
     warden (1.2.9)
       rack (>= 2.0.9)
+    warden-jwt_auth (0.8.0)
+      dry-auto_inject (>= 0.8, < 2)
+      dry-configurable (>= 0.13, < 2)
+      jwt (~> 2.1)
+      warden (~> 1.2)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -304,8 +324,10 @@ DEPENDENCIES
   capybara
   debug
   devise
+  devise-jwt
   factory_bot_rails
   faker
+  fast_jsonapi
   importmap-rails
   jbuilder
   pg (~> 1.1)
