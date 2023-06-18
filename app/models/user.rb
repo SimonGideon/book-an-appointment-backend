@@ -6,6 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
   has_many :reservations
+  has_many :houses, through: :reservations
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
 end

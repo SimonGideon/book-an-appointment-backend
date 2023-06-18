@@ -24,6 +24,7 @@ class ReservationsController < ApplicationController
   # POST /reservations or /reservations.json
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
     if check_available_dates(@reservation)
       respond_to do |format|
         if @reservation.save
@@ -68,7 +69,7 @@ class ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.require(:reservation).permit(:check_in, :check_out, :user_id, :house_id)
+    params.require(:reservation).permit(:check_in, :check_out, :house_id)
   end
 
   def check_available_dates(reservation)
