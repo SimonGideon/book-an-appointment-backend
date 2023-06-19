@@ -4,13 +4,13 @@ class ReservationsController < ApplicationController
 
   # GET /reservations or /reservations.json
   def index
-    @reservations = Reservation.where(user_id: current_user.id)
+    @reservations = Reservation.where(user_id: current_user.id).order(:check_in)
     render json: @reservations
   end
 
   def house_reservations
     house = House.find(params[:id])
-    render json: house.reservations
+    render json: house.reservations.order(:check_in)
   end
 
   # GET /reservations/1 or /reservations/1.json
