@@ -8,7 +8,7 @@ class ReservationsController < ApplicationController
     render json: @reservations
   end
 
-  def house_reservations 
+  def house_reservations
     house = House.find(params[:id])
     render json: house.reservations
   end
