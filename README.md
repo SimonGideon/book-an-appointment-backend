@@ -85,23 +85,23 @@ To get a local copy up and running follow these simple example steps.
 
 Clone this repository to your desired folder:
 
-```sh
+```
 cd my-prefered-folder
-  
 git clone https://github.com/jmonto55/book-an-appointment-backend.git
-
 ```
 
 ### Install
 
 Install this project with:
 
+> Navigate into the project directory
 ```sh
 cd book-an-appointment-backend
-  
-bundle
 ```
-
+> Install the related dependencies
+```sh
+bundle install
+```
 ### 💾 Database
 
 Create the databases,run migrations, and populate it with seed data:
