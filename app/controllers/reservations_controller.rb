@@ -95,15 +95,15 @@ class ReservationsController < ApplicationController
     end
   end
 
-  def overlap(date)
-    Reservation.all.each do |r|
+  def overlap(house_id, date)
+    Reservation.where(house_id: house_id).each do |r|
       return true if r.check_in <= date && r.check_out >= date
     end
     false
   end
 
   def internal_overlap(reservation)
-    return false unless overlap(reservation.check_in) || overlap(reservation.check_out)
+    return false unless overlap(reservation.house_id, reservation.check_in) || overlap(reservation.house_id, reservation.check_out)
 
     reservation.errors.add(:base,
                            'Not allowed. Your reservation duration overlaps with another already reserved duration.')
