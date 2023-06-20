@@ -33,14 +33,6 @@
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-<details>
-  <summary>Client</summary>
-    <ul>
-    <li><a href="https://react.dev/">React</a></li>
-    <li><a href="https://redux.js.org/">Redux</a></li>
-  </ul>
-</details>
 <details>
   <summary>Server</summary>
   <ul>
@@ -56,7 +48,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Data Model**
+- [X] **Data Model**
+- [X] **Add and delete houses**
+- [X] **Make your reservation**
+- [X] **Delete unwanted reservation**  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
