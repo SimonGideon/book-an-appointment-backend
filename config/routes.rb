@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/current_user', to: 'current_user#index'
+  get '/house/:id/reservations', to: 'reservations#house_reservations'
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
