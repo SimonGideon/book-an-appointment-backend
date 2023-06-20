@@ -80,8 +80,8 @@ To get a local copy up and running follow these simple example steps.
 > - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
 
 ### Kanbanboards
-- [Initial Kanbanboard](https://github.com/jmonto55/book-an-appointment-backend/issues/1)
-- [Final Kanbanboard](https://github.com/jmonto55/book-an-appointment-backend/projects/2)
+1. [Initial Kanbanboard](https://github.com/jmonto55/book-an-appointment-backend/issues/1)
+2. [Final Kanbanboard](https://github.com/jmonto55/book-an-appointment-backend/projects/2)
 
 ### Setup
 
