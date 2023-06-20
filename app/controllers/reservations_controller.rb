@@ -96,7 +96,7 @@ class ReservationsController < ApplicationController
   end
 
   def overlap(house_id, date)
-    Reservation.where(house_id: house_id).each do |r|
+    Reservation.where(house_id:).each do |r|
       return true if r.check_in <= date && r.check_out >= date
     end
     false
