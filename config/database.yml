@@ -76,13 +76,13 @@ test:
 # URL environment variable explicitly:
 #
 #   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: book_an_appointment_backend_production
   username: book_an_appointment_backend
   password: <%= ENV["BOOK_AN_APPOINTMENT_BACKEND_DATABASE_PASSWORD"] %>
