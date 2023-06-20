@@ -28,7 +28,7 @@
 
 # 📖 House Reservations <a name="about-project"></a>
 
-> Backend with create, read and destyroy actions for a house renting web application with a React client.
+> This is a House reservation API that allows authorized users to create and delete reservations on desired houses. It also provides a list of all houses available to be reserved.
 
 ## 🛠 Built With <a name="built-with"></a>
 
