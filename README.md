@@ -63,7 +63,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Coming soon]()
+- [Frontend view](https://book-an-appointment-frontend-k479bjyzc-jmonto55.vercel.app/)
+- [Backend Link](https://rails-8q41.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
