@@ -16,6 +16,7 @@
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
+  - [Kanbanboards](#kanbanboards)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
@@ -78,6 +79,9 @@ To get a local copy up and running follow these simple example steps.
 > - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
 > - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
 
+### Kanbanboards
+- [Initial Kanbanboard](https://github.com/jmonto55/book-an-appointment-backend/issues/1)
+- [Final Kanbanboard](https://github.com/jmonto55/book-an-appointment-backend/projects/2)
 
 ### Setup
 
