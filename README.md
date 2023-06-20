@@ -85,7 +85,7 @@ To get a local copy up and running follow these simple example steps.
 
 Clone this repository to your desired folder:
 
-```
+```bash
 cd my-prefered-folder
 git clone https://github.com/jmonto55/book-an-appointment-backend.git
 ```
@@ -104,14 +104,18 @@ bundle install
 ```
 ### 💾 Database
 
-Create the databases,run migrations, and populate it with seed data:
-
+>Create the databases
 ```sh
 rails db:create
+```
+>run migrations
+```sh
 rails db:migrate
+```
+> Populate it with seed data:
+```sh
 rails db:seed
 ```
-
 ### Usage
 
 To run the project run the following commands:
@@ -119,12 +123,11 @@ To run the project run the following commands:
 ```sh
 rails s
 ```
+> Run the server then
+[Read API Documentation](http://localhost:3000/api-docs/index.html)
 
 ### Run tests
-
 To run tests, run the following command:
-
-
 ```sh
 rspec
 ```
@@ -140,18 +143,15 @@ rspec
 -   LinkedIn: [mohamed20163858](https://linkedin.com/in/mohamed20163858/)
 
 👤 **Bryan Hurtado**
-
 -   GitHub: [@DarkxDev](https://github.com/DarkxDev)
 -   LinkedIn: [bryan-hurtado](https://www.linkedin.com/in/bryan-hurtado/)
 
 👤 **Simon Gideon**
-
 -   GitHub: [@SimonGideon](https://github.com/SimonGideon)
 -   Twitter: [@Simon_Gideon](https://twitter.com/Simon_Gideon)
 -   LinkedIn: [simon-gideon](https://www.linkedin.com/in/simon-gideon/)
 
 👤 **Jose Montoya**
-
 - GitHub: [@jmonto55](https://github.com/jmonto55)
 - LinkedIn: [jmontodev](https://www.linkedin.com/in/jmontodev/)
 
