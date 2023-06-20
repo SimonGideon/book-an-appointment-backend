@@ -131,7 +131,6 @@ To run tests, run the following command:
 ```sh
 rspec
 ```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="author"></a>
@@ -159,8 +158,9 @@ rspec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **CRUD for articles**
-- [ ] **Awesome UI**
+- [x] **Image upload instead of a link**
+- [x] **Signup and Email verification for users**
+- [x] **Admin panel to manage houses and reservations**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
