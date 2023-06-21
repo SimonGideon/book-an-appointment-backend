@@ -1,15 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
 
-# Specs in this file have access to a helper object that includes
-# the CurrentUserHelper. For example:
-#
-# describe CurrentUserHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe CurrentUserHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#current_user" do
+    let(:user) { User.create(email: "user@example.com", password: "password123") }
+
+    it "returns the current user" do
+      allow(helper).to receive(:current_user).and_return(user)
+      expect(helper.current_user).to eq(user)
+    end
+  end
 end
