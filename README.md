@@ -131,8 +131,8 @@ rails s
 
 ### Run tests
 To run tests, run the following command:
-```sh
-rspec
+```ruby
+rspec spec --exclude-pattern "spec/integration/*_spec.rb"
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
